@@ -68,7 +68,13 @@ class GeospatialDataClient:
         - NDWI: (B8 - B11) / (B8 + B11) [Soil & Leaf Canopy Moisture]
         """
         months = 60
-        dates = pd.date_range(end=pd.Timestamp.now(), periods=months, freq="M")
+        try:
+            dates = pd.date_range(end=pd.Timestamp.now(), periods=months, freq="ME")
+        except Exception:
+            try:
+                dates = pd.date_range(end=pd.Timestamp.now(), periods=months, freq="M")
+            except Exception:
+                dates = pd.date_range(end=pd.Timestamp.now(), periods=months, freq="30D")
         
         # Region baseline seed
         np.random.seed(abs(int(lat * 100 + lon * 100)) % 50000)
