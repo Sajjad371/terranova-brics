@@ -1,4 +1,4 @@
-# TerraNova BRICS: Sovereign Geospatial AI Platform
+# TerraNova BRICS: Geospatial AI Command Center
 ### Code for Communities 2.0 | Track 4: AgriN
 > **An Enterprise-Grade Sovereign Digital Twin & Predictive Intelligence Platform for Regenerative Agriculture across BRICS Nations.**
 
