@@ -17,7 +17,7 @@ Crucially, TerraNova implements a **Sovereign Gateway via Vertex AI Federated Le
 
 ```mermaid
 flowchart TD
-    subgraph Earth_Observation["🛰️ Orbital Earth Observation Tier"]
+    subgraph Earth_Observation["Orbital Earth Observation Tier"]
         GEE["Google Earth Engine (GEE)"]
         S2["Sentinel-2 MSI (B4, B8, B8A, B11)"]
         NP["NASA POWER Agro-Climatology API"]
@@ -26,16 +26,16 @@ flowchart TD
         NP -->|Solar Radiation & Temperature| FUSION_ENGINE
     end
 
-    subgraph Ground_Tier["🌱 Ground IoT & Field Ingestion"]
-        SOIL_SENSORS["Ground Telemetry (pH, NPK, Moisture)"]
-        FIELD_APP["Mobile Field Agent (Multilingual PWA)"]
-        FOLIAGE_CAM["Multimodal Crop Disease Scanner"]
+    subgraph Ground_Tier["Ground In-Situ Telemetry & Edge Ingestion"]
+        SOIL_SENSORS["Ground Telemetry (pH, NPK, Capacitive VWC)"]
+        FIELD_APP["Mobile Field Operations Console (PWA)"]
+        FOLIAGE_CAM["Multimodal Crop Pathology Scanner"]
         SOIL_SENSORS --> FUSION_ENGINE
         FIELD_APP --> FOLIAGE_CAM
         FOLIAGE_CAM --> FUSION_ENGINE
     end
 
-    subgraph Reasoning_Core["🧠 TerraNova Sovereign Intelligence Core"]
+    subgraph Reasoning_Core["TerraNova Sovereign Intelligence Core"]
         FUSION_ENGINE["Multimodal Geospatial Fusion Engine (engine.py)"]
         GEMINI["Google Gemini 1.5 Pro (1M+ Token Context)"]
         CGIAR["CGIAR Global Pest & Pathogen Taxonomy"]
@@ -48,13 +48,13 @@ flowchart TD
         TWIN_SIM --> CARBON_ORACLE
     end
 
-    subgraph Sovereign_Gateway["🏛️ BRICS Sovereign Federated Learning"]
+    subgraph Sovereign_Gateway["BRICS Sovereign Federated Learning"]
         VERTEX["Google Vertex AI Federated Orchestrator"]
-        NODE_BR["🇧🇷 Brazil (Embrapa)"]
-        NODE_RU["🇷🇺 Russia (Vavilov)"]
-        NODE_IN["🇮🇳 India (ICAR)"]
-        NODE_CN["🇨🇳 China (CAAS)"]
-        NODE_ZA["🇿🇦 South Africa (ARC)"]
+        NODE_BR["Brazil (Embrapa Cerrados)"]
+        NODE_RU["Russia (Vavilov Institute)"]
+        NODE_IN["India (ICAR-IARI)"]
+        NODE_CN["China (CAAS Beijing)"]
+        NODE_ZA["South Africa (ARC Pretoria)"]
         
         NODE_BR & NODE_RU & NODE_IN & NODE_CN & NODE_ZA -->|Encrypted Model Gradients Only| VERTEX
         VERTEX -->|Zero-Knowledge Global Weights| GEMINI
